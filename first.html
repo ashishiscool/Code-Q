@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <label id='x1'>
+
+        </label>
+        <script>
+            i=0
+            function print(a){
+                document.getElementById('x1').innerHTML+=a;
+
+            }
+            function newLine(){
+                print('<br>');
+            }
+            while(i<4){
+                print('*#*#*#*#');
+                newLine();
+                print('#*#*#*#*');
+                newLine();
+                i++;
+            }
+        </script>
+    </body>
+</html>
