@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="third.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="heading">
+            Quiz
+        </h1>
+        <div id='quiz-body'>
+            
+                <h2 id="question">6+5</h2>
+            
+            <form>
+                <input type="radio" name="ans" value="op1" id="option1"/><label for="option1" id="op1">11</label>
+                <input type="radio" name="ans" value="op2" id="option2"/><label for="option2" id="op2">13</label>
+                <input type="radio" name="ans" value="op3" id="option3"/><label for="option3" id="op3">10</label> 
+                <button type="button" id="check">Next</button>
+
+            </form>
+            <h2>score:<span id="score"></span></h2>
+        </div>
+        <script>
+            var quest=[
+                {
+                    q:"6+5",
+                    options:[11,13,10],
+                    ans:"op1"
+                },
+                {
+                    q:"23+78",
+                    options:[101,132,100],                    
+                    ans:"op1"
+                },
+                {
+                    q:"1+1",
+                    options:[3,5,2],
+                    ans:"op3"
+                },
+                {
+                    q:"4+5",
+                    options:[5,11,9],
+                    ans:"op3"
+                },
+                {
+                    q:"9+9",
+                    options:[14,18,21],
+                    ans:"op2"
+                },
+                {
+                    q:"81+9",
+                    options:[91,90,92],
+                    ans:"op2"
+                },
+                {
+                    q:"67+34",
+                    options:[101,444,98],
+                    ans:"op1"
+                },
+                {
+                    q:"44+58",
+                    options:[102,90,93],
+                    ans:"op1"
+                },
+                {
+                    q:"99+8",
+                    options:[77,107,99],
+                    ans:"op2"
+                },
+                {
+                    q:"111+0",
+                    options:[0,111,34],
+                    ans:"ap2"
+                }
+
+
+
+            ];
+            var s=0;
+            var b=document.getElementById("check");
+            arr=0;
+            b.addEventListener("click",function(){
+            var ele = document.getElementsByName("ans"); 
+            console.log(ele);
+            
+                if(arr<9){
+                document.getElementById("question").innerHTML
+                = quest[arr+1].q;
+                document.getElementById("op1").innerHTML
+                = quest[arr+1].options[0];
+                document.getElementById("op2").innerHTML
+                = quest[arr+1].options[1];
+                document.getElementById("op3").innerHTML
+                = quest[arr+1].options[2];
+                
+                }
+                if(arr<10){
+                for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked){
+                    console.log('check');
+                    if(ele[i].value==quest[arr].ans){
+                        console.log('check');
+                        s++;
+                        document.getElementById("score").innerHTML
+                        = s; 
+                    }
+                }}}
+                arr++;
+             
+            });
+             
+            
+        </script>
+    </body>
+</html>
